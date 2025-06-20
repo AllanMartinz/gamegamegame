@@ -5,11 +5,14 @@ from abc import ABC, abstractmethod
 import pygame
 
 
+#classe abstrata para que possa ser usada como pai
 class Entity(ABC):
     def __init__(self, name: str, position: tuple):
         self.name = name
-        self.surf = pygame.image.load('./asset/' + name + '.png')
+        #carregar os fundos
+        self.surf = pygame.image.load('./asset/' + name + '.png').convert_alpha()
         self.rect = self.surf.get_rect(left=position[0], top=position[1])
+        #velocidade
         self.speed = 0
 
     @abstractmethod

@@ -20,13 +20,15 @@ class Game:
             #chama o menu para rodar
             menu = Menu(self.window)
             menu_return = menu.run()
-
+            #caso os escolhido do menu for o 0,1,2 levara ao level 1
             if menu_return in [MENU_OPTION[0], MENU_OPTION[1], MENU_OPTION[2]]:
                 level = Level(self.window, 'Level1', menu_return)
                 level_return = level.run()
+            #caso for a 4 saia do game
             elif menu_return == MENU_OPTION[4]:
                 pygame.quit()
                 quit()
             else:
+                #futura score
                 pass
 
