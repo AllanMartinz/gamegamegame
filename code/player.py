@@ -27,7 +27,7 @@ class Player(Entity):
             self.rect.centerx -= ENTITY_SPEED[self.name]
         if pressed_key[PLAYER_KEY_RIGHT[self.name]] and self.rect.right < WIN_WIDTH:
             self.rect.centerx += ENTITY_SPEED[self.name]
-        pass
+
 
     def shoot(self, ):
         self.shot_delay -= 1
@@ -36,4 +36,3 @@ class Player(Entity):
             pressed_key = pygame.key.get_pressed()
             if pressed_key[PLAYER_KEY_SHOOT[self.name]]:
                  return PlayerShot(f'{self.name}Shoot', (self.rect.centerx, self.rect.centery))
-        return None
