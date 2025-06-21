@@ -4,6 +4,8 @@ from abc import ABC, abstractmethod
 
 import pygame
 
+from code.Const import ENTITY_HEALTH
+
 
 #classe abstrata para que possa ser usada como pai
 class Entity(ABC):
@@ -14,6 +16,8 @@ class Entity(ABC):
         self.rect = self.surf.get_rect(left=position[0], top=position[1])
         #velocidade
         self.speed = 0
+        #vida
+        self.health = ENTITY_HEALTH[self.name]
 
     @abstractmethod
     def move(self, ):
